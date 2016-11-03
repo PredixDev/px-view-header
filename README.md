@@ -31,7 +31,18 @@ Second, import the component to your application with the following tag in your 
 Finally, use the component in your application:
 
 ```
-Insert Your demo code here.
+<px-view-header title="Title"></px-view-header>
+
+<px-view-header title="Title" subtitle="Subtitle"></px-view-header>
+
+<px-view-header title="Title" subtitle="Subtitle">
+  <div class="left actionable">&lt; Back</div>
+  <button class="right btn btn--primary">Save</div>
+</px-view-header>
+
+<px-view-header use-deck-selector="true">
+  <px-deck-selector decks='[...]' config-options='...'></px-deck-selector>
+</px-view-header>
 ```
 
 <br />
