@@ -43,9 +43,9 @@ The view header is located at the top of the page/view, as an alternative to px-
           <content select="px-deck-selector"></content>
         </template>
         <template is="dom-if" if="{{!useDeckSelector}}">
-          <span id="title" class="epsilon">{{title}}</span>
+          <span id="title" class="epsilon">[[title]]</span>
           <template is="dom-if" if="{{subtitle}}">
-            <span id="subtitle" class="zeta">{{subtitle}}</span>
+            <span id="subtitle" class="zeta">[[subtitle]]</span>
           </template>
         </template>
       </div>
