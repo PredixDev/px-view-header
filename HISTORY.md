@@ -1,3 +1,7 @@
+v0.1.4
+==================
+* added style variable for theming
+
 v0.1.3
 ==================
 * fixed tests for IE11

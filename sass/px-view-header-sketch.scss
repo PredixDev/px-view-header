@@ -43,7 +43,7 @@ Predix branding rules go in px-view-header-predix.scss, not in this file.
 // Component
 .header {
   min-height: 4rem;
-  background-color: $white;
+  background-color: var(--px-view-header-background-color, $white);
   padding: 1rem;
 }
 
