@@ -1,3 +1,7 @@
+v0.1.10
+==================
+* changing browser in wct testing from safari 8 to safari 10 on elcapitan
+
 v0.1.9
 ==================
 * changing all devDeps to ^
