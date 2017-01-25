@@ -44,8 +44,8 @@ function runCustomTests() {
           header = document.querySelector('#px-view-header-2 #container'),
           padding = header.getBoundingClientRect().right - right.getBoundingClientRect().right;
       assert.isNotNull(right);
-      assert.equal(right.tagName, "BUTTON");
-      assert.closeTo(padding, 15, 1);
+      assert.equal(right.tagName, "DIV");
+      assert.equal(padding, "15");
     });
   });
 

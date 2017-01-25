@@ -16,7 +16,6 @@
     <!-- px-theme is needed for WCT to run without errors -->
     <link rel="import" href="../../px-theme/px-theme-styles.html">
     <style include="px-theme-styles" is="custom-style"></style>
-    <link rel="stylesheet" href="../css/px-view-header-demo.css"/>
     <link rel="import" href="../../px-deck-selector/px-deck-selector.html"/>
     <!-- This script link will contain the generated script for basic wct test cases -->
     <script src="px-view-header-base-tests.js"></script>
@@ -31,7 +30,7 @@
 
     <px-view-header id="px-view-header-2" title="Title" subtitle="Subtitle">
       <div class="left actionable">&lt; Back</div>
-      <button class="right btn btn--primary">Save</button>
+      <div class="right actionable">Next &gt;</div>
     </px-view-header>
 
     <px-view-header id="px-view-header-3" use-deck-selector="true">
