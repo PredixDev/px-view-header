@@ -1,8 +1,10 @@
-#px-view-header
+#px-view-header [![Build Status](https://travis-ci.org/PredixDev/px-view-header.svg?branch=master)](https://travis-ci.org/PredixDev/px-view-header)
+
+[![px-view-header demo](px-view-header.png?raw=true)](https://github.com/PredixDev/px-view-header)
 
 ## Overview
 
-px-view-header is a Predix UI component
+Px-view-header is a Predix UI component, designed for mobile or desktop applications, which supports placement of strings, links, and buttons in the left, center, or right portion of the header.
 
 ## Usage
 
