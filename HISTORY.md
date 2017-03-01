@@ -1,3 +1,7 @@
+v0.2.3
+==================
+* fix demo width
+
 v0.2.2
 ==================
 * Update colors design to pick up new colors
