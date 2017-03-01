@@ -1,3 +1,7 @@
+v0.2.5
+==================
+* fixed CodePen & demo props
+
 v0.2.4
 ==================
 * fix demo width
