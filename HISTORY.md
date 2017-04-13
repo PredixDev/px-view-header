@@ -1,3 +1,7 @@
+v1.0.0
+==================
+* updated dependencies for design refresh
+
 v0.2.5
 ==================
 * fixed CodePen & demo props
