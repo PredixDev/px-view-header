@@ -8,19 +8,6 @@
  * under which the software has been supplied.
  */
 
-//
-// Sass for the "sketch" notion of the px-view-header component
-//
-// @author
-//
-
-/*
-THIS FILE SHOULD CONTAIN ONLY ABSTRACT/'SKETCH' THEME RULES, NOT SPECIFIC TO PREDIX BRANDING
-Predix branding rules go in px-view-header-predix.scss, not in this file.
-*/
-
-
-
 // Settings
 
 // Tools
@@ -35,7 +22,6 @@ Predix branding rules go in px-view-header-predix.scss, not in this file.
 @import "px-viewport-design/_base.viewport.scss";
 @import "px-headings-design/_base.headings.scss";
 
-
 // Meta
 
 // Objects
@@ -43,10 +29,9 @@ Predix branding rules go in px-view-header-predix.scss, not in this file.
 // Component
 .header {
   min-height: 4rem;
-  background-color: var(--px-view-header-background-color, $white);
+  background-color: var(--px-view-header-background-color, white);
   padding: 1rem;
 }
-
 
 // Trumps
 @import "inuit-clearfix/_trumps.clearfix.scss";
