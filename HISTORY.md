@@ -1,9 +1,6 @@
-v1.0.0-prerelease2
+v1.0.0
 ==================
 * fix for failing unit tests
-
-v1.0.0-prerelease
-==================
 * updated dependencies for design refresh
 
 v0.2.5
