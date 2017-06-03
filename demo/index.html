@@ -1,6 +1,6 @@
 <!-- Common imports -->
 <link rel="import" href="../../polymer/polymer.html" />
-<link rel="import" href="../../px-polymer-font-awesome/polymer-font-awesome.html" />
+<link rel="import" href="../../px-polymer-font-awesome/px-icon-set.html" />
 
 <!-- Common demo imports -->
 <link rel="import" href="../../px-demo/px-demo-header.html" />
@@ -42,8 +42,12 @@
           title="{{props.title.value}}"
           subtitle="{{props.subtitle.value}}">
           <template is="dom-if" if="{{!props.useDeckSelector.value}}">
-            <div class="left actionable">&lt; Back</div>
-            <div class="right actionable">Next &gt;</div>
+            <div class="left actionable">
+              <iron-icon style="width:20px; margin-left: 15px; margin-right: 5px;" icon="px:arrow-left"></iron-icon>Back
+            </div>
+            <div class="right actionable">
+              Next<iron-icon style="width:20px; margin-left: 5px; margin-right: 15px;" icon="px:arrow-right"></iron-icon>
+            </div>
           </template>
           <template is="dom-if" if="{{props.useDeckSelector.value}}">
             <px-deck-selector decks='[{"id":"1","name":"Overview","url":"/overview"}]'></px-deck-selector>

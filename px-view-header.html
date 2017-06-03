@@ -9,7 +9,7 @@
 <!--
 The view header is located at the top of the page/view, as an alternative to px-context-browser. The view header provides the user an overview of the content they are viewing and interacting with. The header contains two content insertion points that will automatically render anything with classes "left" and "right" to the appropriate spots in the header.
 
-##### Usage
+### Usage
 
     <px-view-header title="Title"></px-view-header>
 
@@ -27,9 +27,9 @@ The view header is located at the top of the page/view, as an alternative to px-
 ### Styling
 The following custom properties are available for styling:
 
-Custom property | Description | Default
-----------------|-------------|----------
-`--px-view-header-background-color` | Background color for the view header | `$white`
+Custom property | Description
+:----------------|:-------------
+`--px-view-header-background-color` | Background color for the view header
 
 @element px-view-header
 @blurb The view header is located at the top of the page/view, as an alternative to px-context-browser.
@@ -40,7 +40,7 @@ Custom property | Description | Default
 <dom-module id="px-view-header">
   <template>
     <style include="px-view-header-styles"></style>
-    
+
     <div id="container" class="header flex flex--justify">
       <div id="left" class="flex flex--col flex--center">
         <content select=".left"></content>
