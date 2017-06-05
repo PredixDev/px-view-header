@@ -73,7 +73,7 @@ function runCustomTests() {
     });
     test('Deck selector is inserted into DOM correctly', function() {
       var deck = document.querySelector('#px-view-header-3 px-deck-selector'),
-          selected = deck.querySelector('.epsilon').textContent;
+          selected = deck.querySelector('.dropdown-text').textContent.trim();
       assert.isNotNull(deck);
       assert.equal(selected,"Overview");
     });
