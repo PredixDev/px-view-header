@@ -13,13 +13,9 @@
 // Tools
 
 // Generic
-// @import "px-normalize-design/_generic.normalize.scss";
-// @import "px-box-sizing-design/_generic.box-sizing.scss";
-// @import "px-helpers-design/_generic.helpers.scss";
 
 // Base
 @import "px-flexbox-design/_base.flexbox.scss";
-// @import "px-viewport-design/_base.viewport.scss";
 @import "px-headings-design/_base.headings.scss";
 
 // Meta
@@ -33,6 +29,12 @@
   padding: 1rem;
 }
 
+.title {
+  color: var(--px-view-header-title-color, black);
+}
+
+.subtitle {
+  color: var(--px-view-header-subtitle-color, gray);
+}
+
 // Trumps
-// @import "px-spacing-responsive-design/_trumps.spacing-responsive.scss";
-// @import "px-widths-responsive-design/_trumps.widths-responsive.scss";
