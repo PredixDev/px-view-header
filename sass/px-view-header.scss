@@ -27,27 +27,33 @@
   min-height: 4rem;
   background-color: var(--px-view-header-background-color, lightgray);
   padding: 1rem;
+  align-items: center;
 }
 
 .headerText {
   text-align: center;
   padding-left: $inuit-base-spacing-unit;
   padding-right: $inuit-base-spacing-unit;
+
+  flex: 1;
+  min-width: 0;
 }
 
 .overflow {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  display: block;
 }
 
-.left {
-  margin-right: auto;
-}
-
-.right {
-  margin-left: auto;
-}
+// .left {
+//
+//   margin-right: auto;
+// }
+//
+// .right {
+//   margin-left: auto;
+// }
 
 .title {
   color: var(--px-view-header-title-color, black);

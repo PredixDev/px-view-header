@@ -41,11 +41,11 @@ Custom property | Description
   <template>
     <style include="px-view-header-styles"></style>
 
-    <div id="container" class="header flex flex--row">
-      <div id="left" class="flex flex--col flex--center left">
+    <div id="container" class="header">
+      <div id="left">
         <content select=".left"></content>
       </div>
-      <div id="center" class="headerText flex flex--col flex--middle flex--center">
+      <div id="center" class="headerText">
         <template is="dom-if" if="{{useDeckSelector}}">
           <content select="px-deck-selector"></content>
         </template>
@@ -56,7 +56,7 @@ Custom property | Description
           </template>
         </template>
       </div>
-      <div id="right" class="flex flex--col flex--center right">
+      <div id="right">
         <content select=".right"></content>
       </div>
     </div>
