@@ -41,22 +41,22 @@ Custom property | Description
   <template>
     <style include="px-view-header-styles"></style>
 
-    <div id="container" class="header flex flex--justify">
-      <div id="left" class="flex flex--col flex--center">
+    <div id="container" class="header flex flex--row">
+      <div id="left" class="flex flex--col flex--center left">
         <content select=".left"></content>
       </div>
-      <div id="center" class="flex flex--col flex--middle flex--center">
+      <div id="center" class="headerText flex flex--col flex--middle flex--center">
         <template is="dom-if" if="{{useDeckSelector}}">
           <content select="px-deck-selector"></content>
         </template>
         <template is="dom-if" if="{{!useDeckSelector}}">
-          <span id="title" class="regular title">[[title]]</span>
+          <span id="title" class="regular title overflow">[[title]]</span>
           <template is="dom-if" if="{{subtitle}}">
-            <span id="subtitle" class="zeta subtitle">[[subtitle]]</span>
+            <span id="subtitle" class="zeta subtitle overflow">[[subtitle]]</span>
           </template>
         </template>
       </div>
-      <div id="right" class="flex flex--col flex--center">
+      <div id="right" class="flex flex--col flex--center right">
         <content select=".right"></content>
       </div>
     </div>
