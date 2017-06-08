@@ -50,7 +50,7 @@
             </div>
           </template>
           <template is="dom-if" if="{{props.useDeckSelector.value}}">
-            <px-deck-selector decks='[{"id":"1","name":"Overview","url":"/overview"}, {"id":"2","name":"Something else","url":"/something"}, {"id":"3","name":"Option 3","url":"/option3"}]'></px-deck-selector>
+            <px-deck-selector decks='[{"id":"1","name":"Overview","url":"/overview"}, {"id":"2","name":"Something else","url":"/something"}, {"id":"3","name":"A third option","url":"third"}]'></px-deck-selector>
           </template>
         </px-view-header>
       </px-demo-component>
@@ -96,7 +96,7 @@
               configShowProps: ['useDeckSelector'],
               title: '',
               subtitle: '',
-              lightDomContent: '<px-deck-selector decks=\'[{"id":"1","name":"Overview","url":"/overview"}, {"id":"2","name":"Something else","url":"/something"}, {"id":"3","name":"Option 3","url":"/option3"}]\'></px-deck-selector>' }
+              lightDomContent: '<px-deck-selector decks=\'[{"id":"1","name":"Overview","url":"/overview"}, {"id":"2","name":"Something else","url":"/something"}, {"id":"3","name":"A third option","url":"/third"}]\'></px-deck-selector>' }
           ]
         }
       }

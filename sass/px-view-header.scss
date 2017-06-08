@@ -26,40 +26,36 @@
 .header {
   min-height: 4rem;
   background-color: var(--px-view-header-background-color, lightgray);
-  padding: 1rem;
+  //flex stuff
+  display: flex;
   align-items: center;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .headerText {
-  text-align: center;
   padding-left: $inuit-base-spacing-unit;
   padding-right: $inuit-base-spacing-unit;
-
-  flex: 1;
+  //flex stuff
+  flex: initial;
   min-width: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.overflow {
+.truncate {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  display: block;
 }
 
-// .left {
-//
-//   margin-right: auto;
-// }
-//
-// .right {
-//   margin-left: auto;
-// }
-
 .title {
+  text-align: center;
   color: var(--px-view-header-title-color, black);
 }
 
 .subtitle {
+  text-align: center;
   color: var(--px-view-header-subtitle-color, gray);
 }
 

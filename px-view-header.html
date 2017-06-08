@@ -50,9 +50,9 @@ Custom property | Description
           <content select="px-deck-selector"></content>
         </template>
         <template is="dom-if" if="{{!useDeckSelector}}">
-          <span id="title" class="regular title overflow">[[title]]</span>
+          <div id="title" class="regular title truncate">[[title]]</div>
           <template is="dom-if" if="{{subtitle}}">
-            <span id="subtitle" class="zeta subtitle overflow">[[subtitle]]</span>
+            <div id="subtitle" class="zeta subtitle truncate">[[subtitle]]</div>
           </template>
         </template>
       </div>
