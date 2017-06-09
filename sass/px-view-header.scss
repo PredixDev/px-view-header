@@ -28,6 +28,8 @@
 .vh-header {
   min-height: 4rem;
   background-color: var(--px-view-header-background-color, whitesmoke);
+  padding-left: $inuit-base-spacing-unit;
+  padding-right: $inuit-base-spacing-unit;
 
   display: flex;
   align-items: center;

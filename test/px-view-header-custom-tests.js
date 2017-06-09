@@ -37,7 +37,7 @@ function runCustomTests() {
           header = document.querySelector('#px-view-header-1 .vh-header'),
           padding = left.getBoundingClientRect().left - header.getBoundingClientRect().left;
       assert.isNotNull(left);
-      assert.closeTo(padding, 0, 1);
+      assert.closeTo(padding, 15, 1);
     });
     test('Right content is inserted into DOM correctly', function() {
       var right = document.querySelector('#px-view-header-2 #right'),
@@ -45,7 +45,7 @@ function runCustomTests() {
           padding = header.getBoundingClientRect().right - right.getBoundingClientRect().right;
       assert.isNotNull(right);
       assert.equal(right.tagName, "DIV");
-      assert.closeTo(padding, 0, 1);
+      assert.closeTo(padding, 15, 1);
     });
   });
 
