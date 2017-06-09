@@ -41,24 +41,24 @@ Custom property | Description
   <template>
     <style include="px-view-header-styles"></style>
 
-    <div id="container" class="header">
-      <div id="left">
-        <content select=".left"></content>
-      </div>
-      <div id="center" class="headerText">
-        <template is="dom-if" if="{{useDeckSelector}}">
-          <content select="px-deck-selector"></content>
-        </template>
-        <template is="dom-if" if="{{!useDeckSelector}}">
-          <div id="title" class="regular title truncate">[[title]]</div>
+    <div class="vh-header">
+      <template is="dom-if" if="{{useDeckSelector}}">
+        <content select="px-deck-selector"></content>
+      </template>
+      <template is="dom-if" if="{{!useDeckSelector}}">
+        <div class="left actionable">
+          <iron-icon icon="px:arrow-left" class="icon-left"></iron-icon>Back
+        </div>
+        <div class="vh-header-text">
+          <div class="regular vh-title vh-truncate" title="[[title]]">[[title]]</div>
           <template is="dom-if" if="{{subtitle}}">
-            <div id="subtitle" class="zeta subtitle truncate">[[subtitle]]</div>
+            <div class="zeta vh-subtitle vh-truncate" title="[[subtitle]]">[[subtitle]]</div>
           </template>
-        </template>
-      </div>
-      <div id="right">
-        <content select=".right"></content>
-      </div>
+        </div>
+        <div class="right actionable">
+          Next<iron-icon icon="px:arrow-right" class="icon-right"></iron-icon>
+        </div>
+      </template>
     </div>
   </template>
 </dom-module>
