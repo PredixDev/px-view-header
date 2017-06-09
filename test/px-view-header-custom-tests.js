@@ -4,44 +4,44 @@ function runCustomTests() {
 
   suite('Custom Automation Tests for Simple px-view-header Example', function() {
     test('Header is proper height', function() {
-      var header = document.querySelector('#px-view-header-1 #container'),
+      var header = document.querySelector('#px-view-header-1 .vh-header'),
           height = window.getComputedStyle(header)["min-height"];
       assert.equal(height, "60px");
     });
     test('Subtitle not rendered if undefined', function() {
-      var subtitle = document.querySelector('#px-view-header-1 #subtitle');
+      var subtitle = document.querySelector('#px-view-header-1 .vh-subtitle');
       assert.isNull(subtitle);
     });
     test('Title is passed correctly', function() {
-      var title = document.querySelector('#px-view-header-1 #title');
+      var title = document.querySelector('#px-view-header-1 .vh-title');
       assert.equal(title.textContent, "Title");
     });
   });
 
   suite('Custom Automation Tests for Subtitle px-view-header Example', function() {
     test('Header is proper height', function() {
-      var header = document.querySelector('#px-view-header-2 #container'),
+      var header = document.querySelector('#px-view-header-2 .vh-header'),
           height = window.getComputedStyle(header)["min-height"];
       assert.equal(height, "60px");
     });
     test('Title is passed correctly', function() {
-      var title = document.querySelector('#px-view-header-2 #title');
+      var title = document.querySelector('#px-view-header-2 .vh-title');
       assert.equal(title.textContent, "Title");
     });
     test('Subtitle is passed correctly', function() {
-      var subtitle = document.querySelector('#px-view-header-2 #subtitle');
+      var subtitle = document.querySelector('#px-view-header-2 .vh-subtitle');
       assert.equal(subtitle.textContent, "Subtitle");
     });
     test('Left content is inserted into DOM correctly', function() {
-      var left = document.querySelector('#px-view-header-2 .left'),
-          header = document.querySelector('#px-view-header-1 #container'),
+      var left = document.querySelector('#px-view-header-2 #left'),
+          header = document.querySelector('#px-view-header-1 .vh-header'),
           padding = left.getBoundingClientRect().left - header.getBoundingClientRect().left;
       assert.isNotNull(left);
       assert.closeTo(padding, 0, 1);
     });
     test('Right content is inserted into DOM correctly', function() {
-      var right = document.querySelector('#px-view-header-2 .right'),
-          header = document.querySelector('#px-view-header-2 #container'),
+      var right = document.querySelector('#px-view-header-2 #right'),
+          header = document.querySelector('#px-view-header-2 .vh-header'),
           padding = header.getBoundingClientRect().right - right.getBoundingClientRect().right;
       assert.isNotNull(right);
       assert.equal(right.tagName, "DIV");
@@ -51,24 +51,24 @@ function runCustomTests() {
 
   suite('Custom Automation Tests for px-view-header Example with Deck Selector', function() {
     test('Header is proper height', function() {
-      var header = document.querySelector('#px-view-header-3 #container'),
+      var header = document.querySelector('#px-view-header-3 .vh-header'),
           height = window.getComputedStyle(header)["min-height"];
       assert.equal(height, "60px");
     });
     test('Title is undefined', function() {
-      var title = document.querySelector('#px-view-header-3 #title');
+      var title = document.querySelector('#px-view-header-3 .vh-title');
       assert.isNull(title);
     });
     test('Subtitle is undefined', function() {
-      var subtitle = document.querySelector('#px-view-header-3 #subtitle');
+      var subtitle = document.querySelector('#px-view-header-3 .vh-subtitle');
       assert.isNull(subtitle);
     });
     test('Left content is undefined', function() {
-      var left = document.querySelector('#px-view-header-3 .left');
+      var left = document.querySelector('#px-view-header-3 #left');
       assert.isNull(left);
     });
     test('Right content is undefined', function() {
-      var right = document.querySelector('#px-view-header-3 .right');
+      var right = document.querySelector('#px-view-header-3 #right');
       assert.isNull(right);
     });
     test('Deck selector is inserted into DOM correctly', function() {
