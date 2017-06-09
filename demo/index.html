@@ -41,6 +41,14 @@
           use-deck-selector="{{props.useDeckSelector.value}}"
           title="{{props.title.value}}"
           subtitle="{{props.subtitle.value}}">
+          <template is="dom-if" if="{{!props.useDeckSelector.value}}">
+            <div id="left" class="actionable">
+              <iron-icon style="width:20px; margin-left: 15px; margin-right: 5px;" icon="px:arrow-left"></iron-icon>Back
+            </div>
+            <div id="right" class="actionable">
+              Next<iron-icon style="width:20px; margin-left: 5px; margin-right: 15px;" icon="px:arrow-right"></iron-icon>
+            </div>
+          </template>
           <template is="dom-if" if="{{props.useDeckSelector.value}}">
             <px-deck-selector decks='[{"id":"1","name":"Overview","url":"/overview"}, {"id":"2","name":"Something else","url":"/something"}, {"id":"3","name":"A third option","url":"third"}]'></px-deck-selector>
           </template>
@@ -81,7 +89,7 @@
           return [
             { configName: "Mobile-style header",
               configReset: true,
-              lightDomContent: '<div class="left actionable">&lt; Back</div><div class="right actionable">Next &gt;</div>' },
+              lightDomContent: '<div id="left" class="actionable"><iron-icon style="width:20px; margin-left: 15px; margin-right: 5px;" icon="px:arrow-left"></iron-icon>Back</div><div id="right" class="actionable">Next<iron-icon style="width:20px; margin-left: 5px; margin-right: 15px;" icon="px:arrow-right"></iron-icon></div>' },
 
             { configName: "With deck selector",
               useDeckSelector: true,
@@ -117,7 +125,7 @@
 
       lightDomContent: {
         type: String,
-        defaultValue: ''
+        defaultValue: '<div id="left" class="actionable"><iron-icon style="width:20px; margin-left: 15px; margin-right: 5px;" icon="px:arrow-left"></iron-icon>Back</div><div id="right" class="actionable">Next<iron-icon style="width:20px; margin-left: 5px; margin-right: 15px;" icon="px:arrow-right"></iron-icon></div>'
       }
     }
   });

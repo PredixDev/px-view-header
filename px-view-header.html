@@ -42,23 +42,23 @@ Custom property | Description
     <style include="px-view-header-styles"></style>
 
     <div class="vh-header">
-      <template is="dom-if" if="{{useDeckSelector}}">
-        <content select="px-deck-selector"></content>
-      </template>
-      <template is="dom-if" if="{{!useDeckSelector}}">
-        <div class="left actionable">
-          <iron-icon icon="px:arrow-left" class="icon-left"></iron-icon>Back
-        </div>
-        <div class="vh-header-text">
+      <div>
+        <content select="#left"></content>
+      </div>
+      <div class="vh-header-text">
+        <template is="dom-if" if="{{useDeckSelector}}">
+          <content select="px-deck-selector"></content>
+        </template>
+        <template is="dom-if" if="{{!useDeckSelector}}">
           <div class="regular vh-title vh-truncate" title="[[title]]">[[title]]</div>
           <template is="dom-if" if="{{subtitle}}">
             <div class="zeta vh-subtitle vh-truncate" title="[[subtitle]]">[[subtitle]]</div>
           </template>
-        </div>
-        <div class="right actionable">
-          Next<iron-icon icon="px:arrow-right" class="icon-right"></iron-icon>
-        </div>
-      </template>
+        </template>
+      </div>
+      <div>
+        <content select="#right"></content>
+      </div>
     </div>
   </template>
 </dom-module>
