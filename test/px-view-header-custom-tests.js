@@ -5,7 +5,7 @@ function runCustomTests() {
   suite('Custom Automation Tests for Simple px-view-header Example', function() {
     test('Header is proper height', function() {
       var header = document.querySelector('#px-view-header-1 .vh-header'),
-          height = window.getComputedStyle(header)["min-height"];
+          height = window.getComputedStyle(header)["height"];
       assert.equal(height, "60px");
     });
     test('Subtitle not rendered if undefined', function() {
@@ -21,7 +21,7 @@ function runCustomTests() {
   suite('Custom Automation Tests for Subtitle px-view-header Example', function() {
     test('Header is proper height', function() {
       var header = document.querySelector('#px-view-header-2 .vh-header'),
-          height = window.getComputedStyle(header)["min-height"];
+          height = window.getComputedStyle(header)["height"];
       assert.equal(height, "60px");
     });
     test('Title is passed correctly', function() {
@@ -52,7 +52,7 @@ function runCustomTests() {
   suite('Custom Automation Tests for px-view-header Example with Deck Selector', function() {
     test('Header is proper height', function() {
       var header = document.querySelector('#px-view-header-3 .vh-header'),
-          height = window.getComputedStyle(header)["min-height"];
+          height = window.getComputedStyle(header)["height"];
       assert.equal(height, "60px");
     });
     test('Title is undefined', function() {
