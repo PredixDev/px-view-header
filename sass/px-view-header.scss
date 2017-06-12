@@ -33,7 +33,6 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-  // justify-content: center;
 }
 
 .vh-header-text {
@@ -44,6 +43,10 @@
   min-width: 0;
   margin-left: auto;
   margin-right: auto;
+}
+
+.vh-header-text--ms-fix {
+  min-width: 1px; //on IE11, leaving this as 0 or 0px means auto instead of 0
 }
 
 .vh-truncate {
