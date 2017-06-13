@@ -1,5 +1,6 @@
 v1.0.0
 ==================
+* component redesign
 * fix for failing unit tests
 * updated dependencies for design refresh
 
