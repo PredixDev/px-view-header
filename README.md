@@ -1,6 +1,5 @@
 #px-view-header [![Build Status](https://travis-ci.org/PredixDev/px-view-header.svg?branch=master)](https://travis-ci.org/PredixDev/px-view-header)
 
-[![px-view-header demo](px-view-header.png?raw=true)](https://github.com/PredixDev/px-view-header)
 
 ## Overview
 
