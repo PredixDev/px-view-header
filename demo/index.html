@@ -42,8 +42,12 @@
           title="{{props.title.value}}"
           subtitle="{{props.subtitle.value}}">
           <template is="dom-if" if="{{!props.useDeckSelector.value}}">
-            <div id="left" class="actionable">Back</div>
-            <div id="right" class="actionable">Next</div>
+            <div id="left" class="actionable">
+              <px-icon icon="px-nav:back"></px-icon>&nbsp;&nbsp;Back
+            </div>
+            <div id="right" class="actionable">
+              Next&nbsp;&nbsp;<px-icon icon="px-nav:next"></px-icon>
+            </div>
           </template>
           <template is="dom-if" if="{{props.useDeckSelector.value}}">
             <px-deck-selector decks='[{"id":"1","name":"Overview","url":"/overview"}, {"id":"2","name":"Something else","url":"/something"}, {"id":"3","name":"A third option","url":"third"}]'></px-deck-selector>
@@ -121,7 +125,7 @@
 
       lightDomContent: {
         type: String,
-        defaultValue: '<div id="left" class="actionable">Back</div><div id="right" class="actionable">Next</div>'
+        defaultValue: '<div id="left" class="actionable"><px-icon icon="px-nav:back"></px-icon>Back</div><div id="right" class="actionable">Next<px-icon icon="px-nav:next"></px-icon></div>'
       }
     }
   });

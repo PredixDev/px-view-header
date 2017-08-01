@@ -1,3 +1,7 @@
+v1.0.2
+==================
+* add icons to demo
+
 v1.0.1
 ==================
 * fix demo issues
