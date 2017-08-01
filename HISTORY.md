@@ -1,3 +1,7 @@
+v1.0.1
+==================
+* fix demo issues
+
 v1.0.0
 ==================
 * component redesign
