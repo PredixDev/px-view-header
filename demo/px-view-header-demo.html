@@ -93,7 +93,6 @@
 
             { configName: "With deck selector",
               useDeckSelector: true,
-              configShowProps: ['useDeckSelector'],
               title: '',
               subtitle: '',
               lightDomContent: '<px-deck-selector decks=\'[{"id":"1","name":"Overview","url":"/overview"}, {"id":"2","name":"Something else","url":"/something"}, {"id":"3","name":"A third option","url":"/third"}]\'></px-deck-selector>' }
@@ -106,9 +105,7 @@
       useDeckSelector: {
         type: Boolean,
         defaultValue: false,
-        inputType: 'toggle',
-        inputDisabled: true,
-        inputHelpText: 'Choose the tabs above to change this property.'
+        inputType: 'toggle'
       },
 
       title: {
@@ -127,6 +124,17 @@
         type: String,
         defaultValue: '<div id="left" class="actionable"><px-icon icon="px-nav:back"></px-icon>Back</div><div id="right" class="actionable">Next<px-icon icon="px-nav:next"></px-icon></div>'
       }
+    },
+
+    ready: function() {
+      window.addEventListener('iron-change', function() {
+        if (this.props.useDeckSelector.value) {
+          this.set('props.lightDomContent.value', '<px-deck-selector decks=\'[{"id":"1","name":"Overview","url":"/overview"}, {"id":"2","name":"Something else","url":"/something"}, {"id":"3","name":"A third option","url":"/third"}]\'></px-deck-selector>');
+        }
+        else {
+          this.set('props.lightDomContent.value', '<div id="left" class="actionable">Back</div><div id="right" class="actionable">Next</div>');
+        }
+      }.bind(this));
     }
   });
 </script>
