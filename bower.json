@@ -26,18 +26,32 @@
     "test/"
   ],
   "dependencies": {
-    "polymer": "^1.9.0",
-    "px-deck-selector": "^2.0.0"
+    "polymer": "#1.9 - 2",
+    "px-deck-selector": "polymer2.0-preview"
   },
   "devDependencies": {
     "px-normalize-design": "^1.0.0",
     "px-box-sizing-design": "^1.0.0",
     "px-headings-design": "^1.0.0",
     "px-helpers-design": "^1.0.0",
-    "px-demo": "^2.0.0",
-    "px-theme": "^3.0.0"
+    "px-theme": "^3.0.0",
+    "web-component-tester": "^6.0.0",
+    "px-icon-set": "polymer2.0-preview"
   },
   "resolutions": {
-    "webcomponentsjs": "^0.7.24"
+    "webcomponentsjs": "^1.0.0"
+  },
+  "variants": {
+    "1.x": {
+      "dependencies": {
+        "polymer": "^1.9.0"
+      },
+      "devDependencies": {
+        "web-component-tester": "^5.0.0"
+      },
+      "resolutions": {
+        "webcomponentsjs": "^0.7.0"
+      }
+    }
   }
 }
