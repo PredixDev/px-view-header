@@ -1,3 +1,7 @@
+v1.1.2
+==================
+* fix closing tag for px-deck-selector slot
+
 v1.1.1
 ==================
 * remove old dependency resolutions
