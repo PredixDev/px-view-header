@@ -1,3 +1,7 @@
+v2.0.1
+==================
+* update docs to reflect v2 syntax
+
 v2.0.0
 ==================
 * Polymer 1.x/2.x hybrid element support
