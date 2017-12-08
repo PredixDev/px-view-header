@@ -1,61 +1,43 @@
-suite('Custom Automation Tests for Simple px-view-header Example', function(done) {
-  let vhFixture;
-  setup((done)=>{
-    vhFixture = fixture('px-view-header-fixture');
-    flush(()=>{
-      done();
-    });
-  });
-
+suite('Custom Automation Tests for Simple px-view-header Example', function() {
   test('Header is proper height', function() {
-    let header = Polymer.dom(vhFixture.root).querySelector('.vh-header'),
+    var header = document.querySelector('#px-view-header-1 .vh-header'),
         height = window.getComputedStyle(header)["height"];
     assert.equal(height, "60px");
   });
-
   test('Subtitle not rendered if undefined', function() {
-    let subtitle = Polymer.dom(vhFixture.root).querySelector('.vh-subtitle');
+    var subtitle = document.querySelector('#px-view-header-1 .vh-subtitle');
     assert.isNull(subtitle);
   });
-
   test('Title is passed correctly', function() {
-    let title = Polymer.dom(vhFixture.root).querySelector('.vh-title');
+    var title = document.querySelector('#px-view-header-1 .vh-title');
     assert.equal(title.textContent, "Title");
   });
 });
 
 suite('Custom Automation Tests for Subtitle px-view-header Example', function() {
-  let vhFixture;
-  setup((done)=>{
-    vhFixture = fixture('px-view-header-2');
-    flush(()=>{
-      done();
-    });
-  });
-
   test('Header is proper height', function() {
-    let header = Polymer.dom(vhFixture.root).querySelector('.vh-header'),
+    var header = document.querySelector('#px-view-header-2 .vh-header'),
         height = window.getComputedStyle(header)["height"];
     assert.equal(height, "60px");
   });
   test('Title is passed correctly', function() {
-    let title = Polymer.dom(vhFixture.root).querySelector('.vh-title');
+    var title = document.querySelector('#px-view-header-2 .vh-title');
     assert.equal(title.textContent, "Title");
   });
   test('Subtitle is passed correctly', function() {
-    let subtitle = Polymer.dom(vhFixture.root).querySelector('.vh-subtitle');
+    var subtitle = document.querySelector('#px-view-header-2 .vh-subtitle');
     assert.equal(subtitle.textContent, "Subtitle");
   });
   test('Left content is inserted into DOM correctly', function() {
-    let left = Polymer.dom(vhFixture).querySelector('[slot=left]'),
-        header = Polymer.dom(vhFixture.root).querySelector('.vh-header'),
+    var left = document.querySelector('#px-view-header-2 #left'),
+        header = document.querySelector('#px-view-header-1 .vh-header'),
         padding = left.getBoundingClientRect().left - header.getBoundingClientRect().left;
     assert.isNotNull(left);
     assert.closeTo(padding, 15, 1);
   });
   test('Right content is inserted into DOM correctly', function() {
-    let right = Polymer.dom(vhFixture).querySelector('[slot=right]'),
-        header = Polymer.dom(vhFixture.root).querySelector('.vh-header'),
+    var right = document.querySelector('#px-view-header-2 #right'),
+        header = document.querySelector('#px-view-header-2 .vh-header'),
         padding = header.getBoundingClientRect().right - right.getBoundingClientRect().right;
     assert.isNotNull(right);
     assert.equal(right.tagName, "DIV");
@@ -64,51 +46,31 @@ suite('Custom Automation Tests for Subtitle px-view-header Example', function() 
 });
 
 suite('Custom Automation Tests for px-view-header Example with Deck Selector', function() {
-  let vhFixture;
-  setup((done)=>{
-    vhFixture = fixture('px-view-header-3');
-    flush(()=>{
-      done();
-    });
-  });
-
   test('Header is proper height', function() {
-    let header = Polymer.dom(vhFixture.root).querySelector('.vh-header'),
+    var header = document.querySelector('#px-view-header-3 .vh-header'),
         height = window.getComputedStyle(header)["height"];
     assert.equal(height, "60px");
   });
   test('Title is undefined', function() {
-    let title = Polymer.dom(vhFixture.root).querySelector('vh-title');
+    var title = document.querySelector('#px-view-header-3 .vh-title');
     assert.isNull(title);
   });
   test('Subtitle is undefined', function() {
-    let subtitle = Polymer.dom(vhFixture.root).querySelector('vh-subtitle');
+    var subtitle = document.querySelector('#px-view-header-3 .vh-subtitle');
     assert.isNull(subtitle);
   });
   test('Left content is undefined', function() {
-    let left = Polymer.dom(vhFixture).querySelector('[slot=left]');
+    var left = document.querySelector('#px-view-header-3 #left');
     assert.isNull(left);
   });
   test('Right content is undefined', function() {
-    let right = Polymer.dom(vhFixture).querySelector('[slot=right]');
+    var right = document.querySelector('#px-view-header-3 #right');
     assert.isNull(right);
   });
-  test('Deck selector is inserted into DOM correctly', function(done) {
-    let deck = Polymer.dom(vhFixture).querySelector('[slot="px-deck-selector"]');
-
-    async.until(
-      ()=>{
-        return (Polymer.dom(deck.root).querySelector('.dropdown-text').textContent.trim() === 'Overview');
-      },
-      (callback)=>{
-        setTimeout(callback, 1000);
-      },
-      ()=>{
-        let selected = Polymer.dom(deck.root).querySelector('.dropdown-text').textContent.trim();
-        assert.isNotNull(deck);
-        assert.equal(selected,'Overview');
-        done();
-      }
-    );
+  test('Deck selector is inserted into DOM correctly', function() {
+    var deck = document.querySelector('#px-view-header-3 px-deck-selector'),
+        selected = deck.querySelector('.dropdown-text').textContent.trim();
+    assert.isNotNull(deck);
+    assert.equal(selected,"Overview");
   });
 });

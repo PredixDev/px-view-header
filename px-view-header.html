@@ -17,8 +17,8 @@ Simple:
 Using content insertion points:
 
     <px-view-header title="Title" subtitle="Subtitle">
-      <div slot="left" class="actionable">Back</div>
-      <button slot="right" class="btn btn--primary">Save</div>
+      <div id="left" class="actionable">Back</div>
+      <button id="right" class="btn btn--primary">Save</div>
     </px-view-header>
 
 Using px-deck-selector:
@@ -46,11 +46,11 @@ Custom property | Description
 
     <div class="vh-header">
       <div>
-        <slot name="left"></slot>
+        <content select="#left"></content>
       </div>
       <div class="vh-header-text vh-header-text--ms-fix">
         <template is="dom-if" if="{{useDeckSelector}}">
-          <slot name="px-deck-selector"></slot>
+          <content select="px-deck-selector"></content>
         </template>
         <template is="dom-if" if="{{!useDeckSelector}}">
           <div class="regular vh-title truncate" title="[[title]]">[[title]]</div>
@@ -60,7 +60,7 @@ Custom property | Description
         </template>
       </div>
       <div>
-        <slot name="right"></slot>
+        <content select="#right"></content>
       </div>
     </div>
   </template>
