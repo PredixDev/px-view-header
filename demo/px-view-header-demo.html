@@ -44,7 +44,7 @@
           title="{{props.title.value}}"
           subtitle="{{props.subtitle.value}}">
           <template is="dom-if" if="{{!props.useDeckSelector.value}}">
-            <div id="left" class="actionable">
+            <div slot="left" class="actionable">
               <px-icon icon="px-nav:back"></px-icon>&nbsp;&nbsp;Back
             </div>
             <div slot="right" class="actionable">
