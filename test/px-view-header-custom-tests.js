@@ -94,7 +94,7 @@ suite('Custom Automation Tests for px-view-header Example with Deck Selector', f
     assert.isNull(right);
   });
   test('Deck selector is inserted into DOM correctly', function(done) {
-    let deck = Polymer.dom(vhFixture).querySelector('[slot="px-deck-selector"]');
+    let deck = Polymer.dom(vhFixture).querySelector('[slot="center"]');
 
     async.until(
       ()=>{
