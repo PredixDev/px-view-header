@@ -2,6 +2,10 @@ v2.0.0
 ==================
 * Polymer 1.x/2.x hybrid element support
 
+v1.1.3
+==================
+* revert Polymer 2.x changes temporarily to make major change
+
 v1.1.2
 ==================
 * fix closing tag for px-deck-selector slot
