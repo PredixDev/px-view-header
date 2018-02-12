@@ -1,3 +1,7 @@
+v2.0.2
+==================
+* reduce icon-set imports
+
 v2.0.1
 ==================
 * update docs to reflect v2 syntax
