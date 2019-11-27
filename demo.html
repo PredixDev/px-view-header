@@ -20,49 +20,70 @@ limitations under the License.
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <title></title>
-    <script type="text/javascript">
-    (function() {
-      'use strict';
+    <script type="module">
+import '@polymer/polymer/polymer-legacy.js';
+import 'px-theme/px-theme-styles.js';
+import 'px-icon-set/px-icon.js';
+import 'px-icon-set/px-icon-set.js';
+import 'px-deck-selector/px-deck-selector.js';
+import './px-view-header.js';
 
-      var onload = function() {
-        // For native Imports, manually fire WebComponentsReady so user code
-        // can use the same code path for native and polyfill'd imports.
-        if (!window.HTMLImports) {
-          document.dispatchEvent(
-            new CustomEvent('WebComponentsReady', {bubbles: true})
-          );
-        }
-      };
+var onload = function() {
+  // For native Imports, manually fire WebComponentsReady so user code
+  // can use the same code path for native and polyfill'd imports.
+  if (!window.HTMLImports) {
+    document.dispatchEvent(
+      new CustomEvent('WebComponentsReady', {bubbles: true})
+    );
+  }
+};
 
-      var webComponentsSupported = (
-        'registerElement' in document && 'import' in document.createElement('link') && 'content' in document.createElement('template')
-      );
+var webComponentsSupported = (
+  'registerElement' in document && 'import' in document.createElement('link') && 'content' in document.createElement('template')
+);
 
-      if (!webComponentsSupported) {
-        var script = document.createElement('script');
-        script.async = true;
-        script.src = '../webcomponentsjs/webcomponents-lite.js';
-        script.onload = onload;
-        document.head.appendChild(script);
-      } else {
-        onload();
-      }
-    })();
-    </script>
+if (!webComponentsSupported) {
+  var script = document.createElement('script');
+  script.async = true;
+  script.src = '../webcomponentsjs/webcomponents-lite.js';
+  script.onload = onload;
+  document.head.appendChild(script);
+} else {
+  onload();
+}
+</script>
 
     <!--
       Load the Polymer library.
     -->
-    <link rel="import" href="../polymer/polymer.html" />
-    <link rel="import" href="../px-theme/px-theme-styles.html" />
-    <link rel="import" href="../px-icon-set/px-icon.html"/>
-    <link rel="import" href="../px-icon-set/px-icon-set.html"/>
-    <link rel="import" href="../px-deck-selector/px-deck-selector.html"/>
-    <custom-style>
-      <style include="px-theme-styles" is="custom-style"></style>
-    </custom-style>
+    <script type="module" src="../@polymer/polymer/polymer-legacy.js"></script>
+    <script type="module" src="../px-theme/px-theme-styles.js"></script>
+    <script type="module" src="../px-icon-set/px-icon.js"></script>
+    <script type="module" src="../px-icon-set/px-icon-set.js"></script>
+    <script type="module" src="../px-deck-selector/px-deck-selector.js"></script>
+    <!-- FIXME(polymer-modulizer):
+        These imperative modules that innerHTML your HTML are
+        a hacky way to be sure that any mixins in included style
+        modules are ready before any elements that reference them are
+        instantiated, otherwise the CSS @apply mixin polyfill won't be
+        able to expand the underlying CSS custom properties.
+        See: https://github.com/Polymer/polymer-modulizer/issues/154
+        -->
+    <script type="module">
+const $_documentContainer = document.createElement('template');
 
-    <link rel="import" href="px-view-header.html" />
+$_documentContainer.innerHTML = `<custom-style>
+      <style include="px-theme-styles" is="custom-style"></style>
+    </custom-style>`;
+
+document.body.appendChild($_documentContainer.content);
+</script>
+
+    <script type="module">
+const $_documentContainer = document.createElement('template');
+$_documentContainer.innerHTML = `<link rel="import" href="px-view-header.html">`;
+document.body.appendChild($_documentContainer.content);
+</script></script>
   </head>
   <body>
      <!-- <px-view-header title="Current View Title" subtitle="A subtitle describing the view.">
@@ -71,8 +92,14 @@ limitations under the License.
       <div slot='right' class='actionable'>Next <px-icon icon='px-nav:next'></px-icon>
       </div>
     </px-view-header> -->
-    <px-view-header use-deck-selector>
-      <px-deck-selector slot="center" decks='[{"id":"1","name":"Overview","url":"/overview"}]'></px-deck-selector>
-    </px-view-header>
+    <script type="module">
+const $_documentContainer = document.createElement('template');
+
+$_documentContainer.innerHTML = `<px-view-header use-deck-selector="">
+      <px-deck-selector slot="center" decks="[{&quot;id&quot;:&quot;1&quot;,&quot;name&quot;:&quot;Overview&quot;,&quot;url&quot;:&quot;/overview&quot;}]"></px-deck-selector>
+    </px-view-header>`;
+
+document.body.appendChild($_documentContainer.content);
+</script>
   </body>
 </html>
